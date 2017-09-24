@@ -108,10 +108,23 @@ public class Agent {
  
             @Override 
             public float estimate(TileNode n, TileNode n1) { 
-                throw new UnsupportedOperationException("Deveria ter retornado "
-                        + "um valor para a heurística no arquivo "
-                        + "Agent.java:107, mas o professor resolveu explodir "
-                        + "o programa e deixar você consertar ;)"); 
+                //Nula
+                //return 0;
+                //Euclidiana
+                return n.getPosition().dst(n1.getPosition())/LevelManager.tileWidth;
+                //Manhattan
+                /*Vector2 vector1, vector2, vDiagonal;
+                float fltCusto, fltRetorno;
+                //Inicializa os vetores
+                vector1 = new Vector2(n.getPosition().x/LevelManager.tileWidth,n.getPosition().x/LevelManager.tileHeight);
+                vector2 = new Vector2(n1.getPosition().x/LevelManager.tileWidth,n1.getPosition().x/LevelManager.tileHeight);
+                //Calcula o custo baseado na distancia
+                fltCusto = vector1.dst(vector2);
+                vDiagonal = new Vector2(Math.abs(vector1.x - vector2.x), Math.abs(vector1.y- vector2.y));
+                fltRetorno = (float) (fltCusto * (vDiagonal.x + vDiagonal.y) + ((Math.sqrt(2) - 2) * (fltCusto) * Math.min(vDiagonal.x, vDiagonal.y)));
+                return fltRetorno;*/
+                
+                //
             } 
         }, path); 
         pathIterator = path.iterator();
